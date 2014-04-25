@@ -1,0 +1,50 @@
+#!/bin/sh
+#
+# Simple init script for Apache ServiceMix
+#
+# chkconfig: - 90 20
+#
+# Copyright 2014, Gregor Zurowski
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+SMX_HOME="<%= "#{node['servicemix']['home']}/apache-servicemix-#{node['servicemix']['version']}" %>"
+SMX_USER="<%= "#{node['servicemix']['uid']}" %>"
+
+# For SELinux we need to use 'runuser' not 'su'
+if [ -x "/sbin/runuser" ]; then
+    SU="/sbin/runuser"
+else
+    SU="su"
+fi
+
+case "$1" in
+start)
+    $SU - $SMX_USER -s /bin/sh -c "$SMX_HOME/bin/start"
+    echo "ServiceMix started"
+;;
+stop)
+    $SU - $SMX_USER -s /bin/sh -c "$SMX_HOME/bin/stop"
+    echo "ServiceMix stopped"
+;;
+restart)
+    $0 stop
+    $0 start
+;;
+*)
+    echo "Usage: $0 (stop|start|restart)"
+    exit 1
+;;
+esac
+
+exit 0
