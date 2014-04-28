@@ -20,11 +20,11 @@ This cookbook depends on the `java` cookbook.
 Attributes
 ----------
 
-node['servicemix']['mirror'] - Download URL, default `https://repository.apache.org/content/repositories/releases/org/apache`.
-node['servicemix']['version'] - ServiceMix version to install, default `5.0.0`.
-node['servicemix']['home'] - Installation location, default `/opt`.
-node['servicemix']['uid'] - OS user ID that owns all files and runs the background service, default `smx`.
-node['servicemix']['gid'] = OS group ID that owns all files, default `smx`.
+* node['servicemix']['mirror'] - Download URL, default `https://repository.apache.org/content/repositories/releases/org/apache`.
+* node['servicemix']['version'] - ServiceMix version to install, default `5.0.0`.
+* node['servicemix']['home'] - Installation location, default `/opt`.
+* node['servicemix']['uid'] - OS user ID that owns all files and runs the background service, default `smx`.
+* node['servicemix']['gid'] = OS group ID that owns all files, default `smx`.
 
 License and Author
 ------------------
