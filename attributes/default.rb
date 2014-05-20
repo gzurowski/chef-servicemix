@@ -18,7 +18,7 @@
 #
 
 default['servicemix']['mirror'] = 'https://repository.apache.org/content/repositories/releases/org/apache'
-default['servicemix']['version'] = '5.0.0'
+default['servicemix']['version'] = '5.0.1'
 default['servicemix']['home'] = '/opt'
 default['servicemix']['uid'] = 'smx'
 default['servicemix']['gid'] = 'smx'
