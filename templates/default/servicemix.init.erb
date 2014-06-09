@@ -41,6 +41,9 @@ restart)
     $0 stop
     $0 start
 ;;
+status)
+    $SU - $SMX_USER -s /bin/sh -c "$SMX_HOME/bin/status"
+;;
 *)
     echo "Usage: $0 (stop|start|restart)"
     exit 1
