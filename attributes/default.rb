@@ -22,3 +22,4 @@ default['servicemix']['version'] = '5.4.0'
 default['servicemix']['home'] = '/opt'
 default['servicemix']['uid'] = 'smx'
 default['servicemix']['gid'] = 'smx'
+default['servicemix']['install_java'] = true
