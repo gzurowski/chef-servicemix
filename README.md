@@ -25,6 +25,7 @@ Attributes
 * node['servicemix']['home'] - Installation location, default `/opt`.
 * node['servicemix']['uid'] - OS user ID that owns all files and runs the background service, default `smx`.
 * node['servicemix']['gid'] = OS group ID that owns all files, default `smx`.
+* node['servicemix']['install_java'] - Whether or not to install Java, default `true`
 
 License and Author
 ------------------
